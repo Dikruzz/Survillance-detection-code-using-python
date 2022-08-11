@@ -8,8 +8,8 @@ from email.mime.base import MIMEBase
 from email import encoders
 from email.mime.image import MIMEImage
  
-fromaddr = "confid.surv2022@gmail.com"    # change the email address accordingly
-toaddr = "intruderdetection@yahoo.com"
+fromaddr = "sending mail which is officially made for this purpose"    # change the email address accordingly
+toaddr = "recievers mail-id"
  
 mail = MIMEMultipart()
  
@@ -18,7 +18,7 @@ mail['To'] = toaddr
 mail['Subject'] = "Attachment"
 body = "Please find the attachment"
 led=17
-pir=33
+pir="Enter your port number of pir sensor"
 HIGH=1
 LOW=0
 gpio.setwarnings(False)
@@ -37,7 +37,7 @@ def sendMail(data):
     mail.attach(image)
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(fromaddr, "jfajcgawojjfkglf")
+    server.login(fromaddr, "enter 2step factory code of the sender mail here")
     text = mail.as_string()
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
